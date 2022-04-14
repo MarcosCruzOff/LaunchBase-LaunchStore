@@ -12,7 +12,7 @@ CREATE TABLE "products" (
   "updated_at" timestamp DEFAULT (now())
 );
 
-CREATE TABLE "category" (
+CREATE TABLE "categories" (
   "id" SERIAL PRIMARY KEY,
   "name" text NOT NULL
 );
@@ -24,6 +24,6 @@ CREATE TABLE "files" (
   "products_id" int UNIQUE
 );
 
-ALTER TABLE "products" ADD FOREIGN KEY ("category_id") REFERENCES "category" ("id");
+ALTER TABLE "products" ADD FOREIGN KEY ("category_id") REFERENCES "categories" ("id");
 
 ALTER TABLE "files" ADD FOREIGN KEY ("products_id") REFERENCES "products" ("id");
