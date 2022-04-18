@@ -10,7 +10,7 @@
 
 :root {
 	--primary-color: #fd951f;
-	--secondary-color: #1fd4fd;
+	--secondary-color: #1f83fd;
 }
 body,
 html {
@@ -107,6 +107,20 @@ nav.primary ul li a i {
 	background-color: #d7780b;
 }
 
+.button.edit{
+	background-color: var(--secondary-color);
+}
+.button.delete{
+	background-color: lightgrey;
+}
+
+.button.edit:hover{
+	background-color: #06b6dd;
+}
+.button.delete:hover{
+	background-color: rgb(243, 98, 98);
+}
+
 /* FORM CREATE */
 
 section.form {
@@ -130,7 +144,10 @@ section.form .header h3 {
 }
 form .item {
 	margin-bottom: 16px;
+}
 
+form .fields {
+	margin-bottom: 64px;
 }
 
 form .item > div:nth-child(1){
@@ -172,6 +189,15 @@ form .item textarea {
 	resize: none;
 }
 
-form .fields {
-	margin-bottom: 64px;
-}
+form .item  span {
+	padding: 8px 16px;
+	background-color: var(--primary-color);
+	border-radius: 16px;
+	color: white;
+	margin-right: 4px;
+	margin-top: 8px;
+	display: inline-block;
+	font-weight: bold;
+	text-transform: uppercase;
+  }
+

@@ -8,7 +8,11 @@ router.get('/', function (req, res) {
 })
 
 router.get('/products/create', productsController.create)
+router.get('/products/:id/edit', productsController.edit)
+
 router.post('/products', productsController.post)
+router.put('/products', productsController.put)
+router.delete('/products', productsController.delete)
 
 router.get('/ads/create', function (req, res) {
 	return res.redirect(`/products/create`)
