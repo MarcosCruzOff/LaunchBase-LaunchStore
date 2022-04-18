@@ -57,7 +57,7 @@ module.exports = {
 		req.body.price = req.body.price.replace(/\D/g, '')
 		if (req.body.old_price != req.body.price) {
 			const oldProduct = await Product.find(req.body.id)
-			req.body.old_price = oldProduct.rows[0].pricce
+			req.body.old_price = oldProduct.rows[0].price
 		}
 
 		await Product.update(req.body)
