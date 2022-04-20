@@ -21,9 +21,9 @@ CREATE TABLE "files" (
   "id" SERIAL PRIMARY KEY,
   "name" text,
   "path" text NOT NULL,
-  "products_id" int
+  "product_id" int NOT NULL
 );
 
 ALTER TABLE "products" ADD FOREIGN KEY ("category_id") REFERENCES "categories" ("id");
 
-ALTER TABLE "files" ADD FOREIGN KEY ("products_id") REFERENCES "products" ("id");
+ALTER TABLE "files" ADD FOREIGN KEY ("product_id") REFERENCES "products" ("id");

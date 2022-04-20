@@ -29,40 +29,66 @@
 
 <!--DESCRIÇÃO-->
 <div class="item">
-  <div>Descrição</div>
-  <div>
-    <textarea name="description" cols="30" rows="10">
-    {{product.description}}
-    </textarea>
-  </div>
+    <div>Descrição</div>
+    <div>
+        <textarea name="description">
+        {{product.description}}
+        </textarea>
+    </div>
+</div>
+
+<!--FOTO-->
+<div class="item">
+    <div>Foto</div>
+    <div>
+        <div id="photos-upload">
+            <input 
+                type="file" 
+                name="photos" 
+                id="photos-input" 
+                multiple accpet="image/*"
+                onchange="PhotosUpload.handleFileInput(event)">
+            <p>Selecione Até 6 fotos</p>
+        </div>
+        <div id="photos-previews">
+          {% if files %}
+            {% for image in files %}
+              <div class="photo" id="{{image.id}}">
+                <img src="{{image.src}}" alt="{{image.name}}">
+                <i class="material-icons" onclick="">close</i>
+              </div>
+            {% endfor %}
+          {% endif %}
+        </div>
+    </div>
 </div>
 
 <!--PREÇO-->
 <div class="item">
-  <div>Valor</div>
-  <div>
-      <input 
-         type="text" 
-         name="price" 
-         placeholder="Valor do produto"
-         value="{{ product.price }}"
-         onkeydown="Mask.apply(this, 'formatBRL')">
-  </div>
-  {% if product.old_price %}
-      <input type="hidden" name="old_price" value="{{product.old_price}}">
-  {% endif %}
+    <div>Valor</div>
+    <div>
+        <input 
+            type="text" 
+            name="price" 
+            placeholder="Valor do produto"
+            value="{{ product.price }}"
+            onkeydown="Mask.apply(this, 'formatBRL')">
+    </div>
+    {% if product.old_price %}
+        <input type="hidden" name="old_price" value="{{product.old_price}}">
+    {% endif %}
 </div>
 
 <!--QUANTIDADE-->
 <div class="item">
-  <div>quantidade</div>
-  <div>
-      <input 
-         type="number" 
-         name="quantity" 
-         placeholder="Digite o nome do Anúncio"
-         value="{{ product.quantity }}">
-  </div>
+    <div>quantidade</div>
+    <div>
+        <input 
+            type="number" 
+            name="quantity" 
+            placeholder="Digite o nome do Anúncio"
+            value="{{ product.quantity }}">
+    </div>
 </div>
 
 <!--DISPONIVEL-->

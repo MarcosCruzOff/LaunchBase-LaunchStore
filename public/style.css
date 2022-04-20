@@ -187,6 +187,7 @@ form .item select {
 form .item textarea {
 	min-height: 150px;
 	resize: none;
+	
 }
 
 form .item  span {
@@ -201,3 +202,77 @@ form .item  span {
 	text-transform: uppercase;
   }
 
+form .item #photos-upload{
+	position: relative;
+	display: block;
+	overflow: hidden;
+	width: 200px;
+}
+
+form .item #photos-input {
+	position: absolute;
+	top:0;
+	left: 0;
+	display: block;
+	overflow: hidden;
+	width: 100%;
+	height: 100%;	
+	opacity: 0;
+	cursor: pointer;
+}
+
+form .item #photos-upload p {
+	padding: 8px 16px;
+	border-radius: 4px;
+	box-shadow: 0, 2px 2px -6px #333;
+	background-color: var(--secondary-color);
+	color: white;
+	text-align: center;
+	
+	text-transform: uppercase;
+	font-size: 14px;
+}
+
+form .item #photos-previews{
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	gap: 8px;
+	width: 100%;
+	margin: 8px 0
+}
+
+form .item #photos-previews img {
+	width: 100%;
+	height: 150px;
+
+	object-fit: cover;
+	overflow: hidden;
+
+}
+
+#photos-previews .photo{
+	position: relative;	
+}
+
+#photos-previews .photo i {
+	position: absolute;
+	top: 0;
+	left: 0;
+	background-color: rgba(255,255,255,0.8);
+	color: red;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	font-size: 500%;
+	cursor: pointer;
+
+	transition: opacity 500ms;
+	opacity: 0;
+}
+
+#photos-previews .photo:hover i {
+	opacity: 1;
+}
