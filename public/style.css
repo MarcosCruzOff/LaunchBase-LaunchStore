@@ -11,7 +11,15 @@
 :root {
 	--primary-color: #fd951f;
 	--secondary-color: #1f83fd;
+	--background-body:#f9f9f9
 }
+body{
+	background-color: var(--background-body);
+	display: flex;
+	flex-direction: column;
+
+}
+
 body,
 html {
 	min-height: 100vh;
@@ -35,6 +43,10 @@ header div.container {
 
 header div.container a {
 	justify-self: start;
+}
+
+footer {
+	margin-top: auto;
 }
 
 .container {
@@ -275,4 +287,78 @@ form .item #photos-previews img {
 
 #photos-previews .photo:hover i {
 	opacity: 1;
+}
+
+
+/* produtos views */
+
+.product-single{
+	background-color: #e5e5e5;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 24px;
+	padding: 32px 24px;
+	margin: 32px auto;
+	box-shadow: 2px 2px 2px 2px 0 rgba(63, 63, 63, 0.5);
+	border-radius: 4px;
+}
+
+.product-single .gallery {
+	width: 100%;
+}
+
+.product-single .gallery img {
+	width: 100%;
+}
+
+.product-single .info {
+	display: grid;
+	grid-template-rows: auto 40px 2fr 1fr;
+}
+
+.product-single .info h1 {
+	font-size: 32px;
+	line-height: 42px;
+	color: #333;
+	text-transform: uppercase;
+}
+
+.product-single .info .published {
+	color: #888;
+	font-size: 12px;
+	line-height: 22px;
+	letter-spacing: 0.4px;
+} 
+
+.product-single .price-buy{
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+
+	padding-top: 8px ;
+	border-top: 1px solid #eee;
+}
+
+.product-single .price-buy .price {
+	font-size:  24px;
+	color: #333;
+	font-weight: bold;
+
+	display: flex;
+	align-items: center;
+
+}
+
+.product-single .price-buy .price .old{
+	text-decoration: line-through;
+	color: #999; 
+	font-size: 14px;
+	font-weight: normal;
+	margin-left: 8px;
+}
+
+.product-single .price-buy .buy button{
+	background-color: var(--secondary-color);
+	font-size: 14px;
+	letter-spacing: 0.4px;
 }

@@ -9,6 +9,7 @@ router.get('/', function (req, res) {
 })
 
 router.get('/products/create', productsController.create)
+router.get('/products/:id', productsController.show)
 router.get('/products/:id/edit', productsController.edit)
 
 router.post('/products', multer.array('photos', 6), productsController.post)
