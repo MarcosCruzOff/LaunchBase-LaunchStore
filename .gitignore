@@ -1,1 +1,4 @@
+### VisualStudioCode ###
 node_modules
+.vscode/*
+.vscode/
